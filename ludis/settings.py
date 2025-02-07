@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'ludis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
+        'NAME': config('DB_NAME', default='neondb'),
+        'USER': config('DB_USER', default='default'),
+        'PASSWORD': config('DB_PASSWORD', default='npg_7FXPrYuKS2vy'),
+        'HOST': config('DB_HOST', default='ep-billowing-forest-a5obrmbe-pooler.us-east-2.aws.neon.tech  '),
+        'PORT': config('DB_PORT', default='5432'),
         'OPTIONS': {'sslmode': 'require'},      
     }
 }
