@@ -249,9 +249,9 @@
         {% else %}
         <li><a href="{% url 'repair:login' %}">Iniciar Sesión</a></li>
         {% endif %}
-        <li><a href="{% url 'amharic:amharic' %}">
+        <!-- <li><a href="{% url 'amharic:amharic' %}">
             አማርኛ
-          </a></li>
+          </a></li> -->
       </ul>
     </nav>
 
@@ -303,9 +303,9 @@
             <div class="icon">
               <i class="fas fa-plus"></i>
             </div>
-            <input type="text" name="name" id="" placeholder="Name"><br><br>
-            <input type="email" name="email" placeholder="Email" id=""><br><br>
-            <input type="text" name="phone" placeholder="Phone Number" id=""><br><br>
+            <input type="text" name="name" id="" placeholder="Nombre"><br><br>
+            <input type="email" name="email" placeholder="Correo" id=""><br><br>
+            <input type="text" name="phone" placeholder="Número de celular" id=""><br><br>
             <select class="col-md-6" id="country" name="country" class="form-control">
               <option value="">Please Select Your Current Country</option>
               <option value="Afghanistan">Afghanistan</option>
@@ -555,13 +555,13 @@
               <option value="Zambia">Zambia</option>
               <option value="Zimbabwe">Zimbabwe</option>
             </select><br><br>
-            <input type="text" name="city" placeholder="city">
-            <p>El valor aproximado es => <b style="color: red;" id="amount">0</b>birr</p>
+            <input type="text" name="city" placeholder="Ciudad">
+            <p>El valor aproximado es => <b style="color: red;" id="amount">0</b></p>
             <p>Si desea que nuestro técnico vaya a su domicilio, por favor confirme.</p>
             <label for="check"><i class="fas fa-times fa-3x"></i></label>
             <div class="btns">
-              <label for="yes"> Mi lugar</label>
-              <label for="no"> Yo vendré</label>
+              <label for="yes"> En mi domicilio</label>
+              <label for="no"> En el taller</label>
             </div>
           </div>
         </div>
@@ -669,13 +669,13 @@
         <div class="backgroundk"></div>
         <div class="alert_boxk">
           <input type="text" style="border:2px solid #333; padding: 10px;border-radius: 20px;" name="name" id=""
-            placeholder="Name"><br><br>
+            placeholder="Nombre"><br><br>
           <input type="text" style="border:2px solid #333; padding: 10px;border-radius: 20px;" name="phone"
-            placeholder="Phone Number" id=""><br><br>
-          <textarea name="more" id="" cols="30" rows="10" placeholder="Tell us more about your self"></textarea>
+            placeholder="Número de celular" id=""><br><br>
+          <textarea name="more" id="" cols="30" rows="10" placeholder="Dinos más a cerca de ti mismo"></textarea>
 
           <p style="width: 3000px; font-size: 15px;color:#333;">Ingresa tu hdv(solo pdf)</p>
-          <input type="file" disabled name="file" placeholder="city">
+          <input type="file" disabled name="file" placeholder="Ciudad">
           <label for="checkk"><i class="fas fa-times fa-3x"></i></label>
           <div class="btnsk">
             <label for="hey"> Aplicar</label>
@@ -698,7 +698,7 @@
       <div class="content">
         <h3>Productos para la venta </h3>
         <p>
-          Como empresa de reparación, BILIHCARE conoce perfectamente las características externas e internas de los
+          Como empresa de reparación, Ecotronic conoce perfectamente las características externas e internas de los
           dispositivos electrónicos.
           Por eso, le vendemos electrodomésticos, teléfonos móviles, ordenadores portátiles, televisores y otros
           accesorios en nuestro centro solo después de estar seguros de su originalidad y calidad.
@@ -723,18 +723,15 @@
   </section>
 
   <section id="review" class="review">
-    <h1 class="heading">La mayoría de nuestros <span>S</span>ervicios</h1>
+    <h1 class="heading">Nuestros <span>S</span>ervicios</h1>
 
     <div class="box-container">
       <div class="box">
         <div class="content">
           <br><br><br>
-          <h3>Teléfonos móbiles</h3>
+          <h3>Lavadoras digitales</h3>
           <p>
-            En Ecotronic podemos acudir al rescate siempre que haya un problema con su teléfono móvil, con nuestro
-            excepcional servicio de reparación de teléfonos móviles. Somos el proveedor de reparaciones y soporte para
-            muchas marcas en Apartadó y contamos con una de las redes de reparación de teléfonos móviles más grandes y
-            organizadas de Apartadó.
+            Info relevante a cerca de este servicio acá.
           </p>
           <div class="stars">
             <i class="fas fa-star"></i>
@@ -748,10 +745,9 @@
       <div class="box">
         <div class="content">
           <br><br><br>
-          <h3>Servicio posventa</h3>
+          <h3>Aires Acondicionados</h3>
           <p>
-            También podemos brindar un servicio especializado para productos llave en mano. Si tiene un producto
-            electrónico en particular que se comercializa en masa y desea brindar un servicio posventa en todo Apartadó.
+            Info relevante a cerca de este servicio acá.
           </p>
           <div class="stars">
             <i class="fas fa-star"></i>
@@ -765,11 +761,9 @@
       <div class="box">
         <div class="content">
           <br><br><br>
-          <h3>Tablets</h3>
+          <h3>Neveras y nevecones</h3>
           <p>
-            En Ecotronic no solo reparamos teléfonos celulares. También somos expertos en la reparación de tabletas. Sí,
-            solucionamos problemas comunes como pantallas rotas y problemas de visualización. Pero también hacemos
-            reparaciones de tabletas más complicadas que requieren pruebas de diagnóstico y evaluación.
+            Info relevante a cerca de este servicio acá.
           </p>
           <div class="stars">
             <i class="fas fa-star"></i>
@@ -783,12 +777,9 @@
       <div class="box">
         <div class="content">
           <br><br><br>
-          <h3>PCs y TVs</h3>
+          <h3>Computadoras portátiles y de escritorio</h3>
           <p>
-            Además, no nos limitamos a reparar teléfonos móviles y tablets, ya que nuestro trabajo es hacer que te
-            sientas cómodo con la electrónica. Cuando se estropea tu ordenador portátil con el que trabajas, tu precioso
-            televisor que te da el encanto de tu hogar y de tu tiempo libre, la solución para todo esto está en un solo
-            lugar con nosotros.
+            Info relevante a cerca de este servicio acá.
           </p>
           <div class="stars">
             <i class="fas fa-star"></i>
@@ -836,8 +827,8 @@
 
   <section class="footer">
     <h1 class="credit">
-      <a href="{% url 'repair:terms' %}"><span>Terms & conditions</span> </a> | Copyright © 2022 {{web.name}} Inc. All
-      Rights Reserved.
+      <a href="{% url 'repair:terms' %}"><span>Terminos & condiciones</span> </a> | Copyright © 2024 {{web.name}} Inc.
+      Todos los Derechos Reservados.
     </h1>
 
     <div class="icons">
