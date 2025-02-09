@@ -1,18 +1,20 @@
 /* Fuentes y colores base */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
 
+/* Variables de color */
 :root {
-  --primary-color: #2980b9;
+  --primary-color: #0066cc;
   /* Azul profesional */
-  --secondary-color: #2c3e50;
-  /* Gris oscuro */
-  --accent-color: #f39c12;
-  /* Naranja para acentos */
-  --background-color: #f9f9f9;
+  --secondary-color: #004080;
+  /* Azul oscuro */
+  --accent-color: #ffcc00;
+  /* Amarillo para acentos */
+  --background-color: #f3f7fa;
   /* Fondo claro */
-  --text-color: #333;
+  --text-color: #333333;
   /* Color de texto principal */
-  --white: #fff;
+  --white: #ffffff;
   /* Blanco */
 }
 
@@ -70,7 +72,7 @@ header .navbar ul li a {
 }
 
 header .navbar ul li a:hover {
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 header .fa-bars {
@@ -86,7 +88,7 @@ header .fa-bars {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('/static/images/tech-bg.jpg');
+  background: linear-gradient(rgba(0, 64, 128, 0.9), rgba(0, 64, 128, 0.9)), url('/static/images/tech-bg.jpg');
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -125,7 +127,7 @@ header .fa-bars {
   width: 100%;
   padding: 1rem;
   margin-bottom: 1.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   border-radius: 5px;
   font-size: 1.6rem;
 }
@@ -220,7 +222,7 @@ header .fa-bars {
   width: 100%;
   max-width: 400px;
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   border-radius: 5px;
   font-size: 1.6rem;
   margin-bottom: 1.5rem;
