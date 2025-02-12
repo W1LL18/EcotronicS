@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
-{% block title %}About Us{% endblock %}
-{% block name %}About Us{% endblock %}
+{% block title %}Sobre Nosotros{% endblock %}
+{% block name %}Sobre Nosotros{% endblock %}
 {% block main %}
-<!--Featured Receipes -->
+<!--Recetas Destacadas-->
 {% if new %}
 <section id="news" class="bg_grey padding">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-      <h2 class="heading">What's New</h2>
-      <hr class="heading_space">
+        <h2 class="heading">Novedades</h2>
+        <hr class="heading_space">
       </div>
     </div>
     <div class="row">
@@ -19,11 +19,11 @@
             {% for a in new %}
             <div class="item">
               <div class="news_content">
-               <img src="{{a.image.url}}" alt="Docotor">
-               <div class="comment_text">
-                 <h3>{{a.name}}</h3>
-                 <p>{{a.disc}}</p>
-               </div>
+                <img src="{{a.image.url}}" alt="Doctor">
+                <div class="comment_text">
+                  <h3>{{a.name}}</h3>
+                  <p>{{a.disc}}</p>
+                </div>
               </div>
             </div>
             {% endfor %}
@@ -33,27 +33,25 @@
     </div>
   </div>
 </section>
-
 {% endif %}
-
 
 {% for a in ab %}
 <section id="overview" class="padding-top">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-         <h2 class="heading">{{a.title}}</h2>
-         <hr class="heading_space">
-         <p>{{a.p1}}</p>
-         {% if a.p2 %}
-         <p>{{a.p2}}</p>
-         {% endif %}
-         {% if a.p3 %}
-         <p>{{a.p3}}</p>
-         {% endif %}
-         {% if a.p4 %}
-         <p>{{a.p4}}</p>
-         {% endif %}
+        <h2 class="heading">{{a.title}}</h2>
+        <hr class="heading_space">
+        <p>{{a.p1}}</p>
+        {% if a.p2 %}
+        <p>{{a.p2}}</p>
+        {% endif %}
+        {% if a.p3 %}
+        <p>{{a.p3}}</p>
+        {% endif %}
+        {% if a.p4 %}
+        <p>{{a.p4}}</p>
+        {% endif %}
       </div>
     </div>
   </div>

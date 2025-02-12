@@ -1,29 +1,30 @@
-{% extends 'admin-page/base.html' %} 
+{% extends 'admin-page/base.html' %}
 {% block main %}
- <!-- Page Heading -->
- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Edit The About Page Admin {{User.username}}</h1>
+<!-- Encabezado de la página -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Editar la página "About" Admin {{User.username}}</h1>
 </div>
 <div id="main-container">
   <div class="elts">
     <div class="main-block">
-      <h1>Add new paragraph</h1>
+      <h1>Añadir nuevo párrafo</h1>
       <form method="POST">
         {% csrf_token %}
         <hr>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> The Topic</label>
-        <input type="text" style="margin-top: 10px;" name="one" id="name" placeholder="Enter the topic" required/><br><br>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> paragraph 1 (required)</label>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> El Tema</label>
+        <input type="text" style="margin-top: 10px;" name="one" id="name" placeholder="Ingresa el tema"
+          required /><br><br>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> Párrafo 1 (requerido)</label>
         <textarea name="two" id="" style="margin-top: 10px;" cols="30" rows="4" required></textarea>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> paragraph 2 (optional)</label>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> Párrafo 2 (opcional)</label>
         <textarea name="three" id="" style="margin-top: 10px;" cols="30" rows="4"></textarea>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> paragraph 3 (optional)</label>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> Párrafo 3 (opcional)</label>
         <textarea name="four" id="" style="margin-top: 10px;" cols="30" rows="4"></textarea>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> paragraph 4 (optional)</label>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> Párrafo 4 (opcional)</label>
         <textarea name="five" id="" style="margin-top: 10px;" cols="30" rows="4"></textarea>
         <hr>
         <div class="btn-block">
-          <button type="submit" name="add">Submit</button>
+          <button type="submit" name="add">Enviar</button>
         </div>
       </form>
     </div>
@@ -31,27 +32,27 @@
   {% for a in ab %}
   <div class="elts">
     <div class="main-block">
-      <h1>Edit paragraph 
+      <h1>Editar párrafo
       </h1>
       <form method="POST">
         {% csrf_token %}
-        
+
         <hr>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> The Topic</label>
-        <input type="text" style="margin-top: 10px;" name="one" id="name" value="{{a.title}}" required/><br><br>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> paragraph 1 (required)</label>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> El Tema</label>
+        <input type="text" style="margin-top: 10px;" name="one" id="name" value="{{a.title}}" required /><br><br>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> Párrafo 1 (requerido)</label>
         <textarea name="two" id="" style="margin-top: 10px;" cols="30" rows="4">{{a.p1}}</textarea>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> paragraph 2 (optional)</label>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> Párrafo 2 (opcional)</label>
         <textarea name="three" id="" style="margin-top: 10px;" cols="30" rows="4">{{a.p2}}</textarea>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> paragraph 3 (optional)</label>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> Párrafo 3 (opcional)</label>
         <textarea name="four" id="" style="margin-top: 10px;" cols="30" rows="4">{{a.p3}}</textarea>
-        <label id="icon" for="name"><i class="fas fa-comments"></i> paragraph 4 (optional)</label>
+        <label id="icon" for="name"><i class="fas fa-comments"></i> Párrafo 4 (opcional)</label>
         <textarea name="five" id="" style="margin-top: 10px;" cols="30" rows="4">{{a.p4}}</textarea>
         <textarea name="six" id="" style="margin-top: 10px;" hidden cols="30" rows="4">{{a.id}}</textarea>
         <hr>
         <div class="btn-block" style="display: flex;">
-          <button type="submit" style="margin: 10px;" name="edit">Submit</button>
-          <button type="submit" style="margin: 10px;" name="delete">Delete</button>
+          <button type="submit" style="margin: 10px;" name="edit">Enviar</button>
+          <button type="submit" style="margin: 10px;" name="delete">Eliminar</button>
         </div>
       </form>
     </div>

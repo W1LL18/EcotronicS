@@ -1,18 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
 :root {
-  --primary-color: #0066cc;
-  /* Azul profesional */
-  --secondary-color: #004080;
-  /* Azul oscuro */
-  --accent-color: #ffcc00;
-  /* Amarillo para acentos */
-  --background-color: #f3f7fa;
-  /* Fondo claro */
-  --text-color: #333333;
-  /* Color de texto principal */
-  --white: #ffffff;
-  /* Blanco */
+  --main: red;
 }
 
 * {

@@ -1,28 +1,30 @@
-{% extends 'admin-page/base.html' %} 
+{% extends 'admin-page/base.html' %}
 {% block main %}
- <!-- Page Heading -->
- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Edit The User Page Admin {{User.username}}</h1>
+<!-- Encabezado de la Página -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Editar la Página de Usuarios - Administrador {{User.username}}</h1>
 </div>
 <div id="main-container">
   {% for s in sb %}
   <div class="elts">
     <div class="main-block">
-      <h1>Edit existing User</h1>
+      <h1>Editar Usuario Existente</h1>
       <form method="POST">
         {% csrf_token %}
         <hr>
-        <label id="icon" for="name"><i class="fas fa-question-circle"></i> Identity</label>
-        <textarea readonly  id="" style="margin-top: 10px;" cols="30" rows="4">
-            name-{{s.user.first_name}} {{s.user.last_name}}
-            username- {{s.user.username}}
-            {% if s.is_manager == True %}Admin{% else %}Not Admin{% endif %}
+        <label id="icon" for="name"><i class="fas fa-question-circle"></i> Identidad</label>
+        <textarea readonly id="" style="margin-top: 10px;" cols="30" rows="4">
+            Nombre - {{s.user.first_name}} {{s.user.last_name}}
+            Usuario - {{s.user.username}}
+            {% if s.is_manager == True %}Administrador{% else %}No es Administrador{% endif %}
         </textarea>
-        <input type="text" style="margin-top: 10px;" value="{{s.id}}" hidden name="three" id="name" placeholder="Write your answer here" required/>
+        <input type="text" style="margin-top: 10px;" value="{{s.id}}" hidden name="three" id="name"
+          placeholder="Escribe tu respuesta aquí" required />
         <hr>
         <div class="btn-block" style="display: flex;">
-          <button type="submit" style="margin: 10px;" name="edit">{% if s.is_manager == True %}Unmake Admin{% else %}Make Admin{% endif %}</button>
-          <button type="submit" style="margin: 10px;" name="delete">Delete</button>
+          <button type="submit" style="margin: 10px;" name="edit">{% if s.is_manager == True %}Revocar Admin{% else
+            %}Hacer Admin{% endif %}</button>
+          <button type="submit" style="margin: 10px;" name="delete">Eliminar</button>
         </div>
       </form>
     </div>

@@ -99,8 +99,8 @@
   }
 </style>
 {% endblock %}
-{% block title %} Profile Setting{% endblock %}
-{% block name %}Profile{% endblock %}
+{% block title %} Configuración de Perfil{% endblock %}
+{% block name %}Perfil{% endblock %}
 {% block main %}
 <br><br><br><br>
 
@@ -108,7 +108,7 @@
   <div class="container order_form padding">
     <div class="row">
       <div class="col-md-12 appointment_form">
-        <h2 class="heading">Edit Profile</h2>
+        <h2 class="heading">Editar Perfil</h2>
         <hr class="heading_space">
         <div class="row">
           <div class="col-md-8">
@@ -121,73 +121,74 @@
               </div>
               <div class="row">
                 <div class="form-group col-md-12">
-                  <p>Edit your personal data and information</p>
+                  <p>Edita tus datos personales e información</p>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="" style="color: #fff;">First Name</label>
-                    <input type="text" class="form-control" placeholder="Name" value="{{pp.user.first_name}}" name="one"
-                      id="name">
+                    <label for="" style="color: #fff;">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Nombre" value="{{pp.user.first_name}}"
+                      name="one" id="name">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="" style="color: #fff;">Last Name</label>
-                    <input type="text" class="form-control" placeholder="Name" value="{{pp.user.last_name}}" name="two"
-                      id="name">
+                    <label for="" style="color: #fff;">Apellido</label>
+                    <input type="text" class="form-control" placeholder="Apellido" value="{{pp.user.last_name}}"
+                      name="two" id="name">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="" style="color: #fff;">Username</label>
-                    <input type="text" class="form-control" placeholder="Name" value="{{pp.user.username}}" name="three"
-                      id="name">
+                    <label for="" style="color: #fff;">Nombre de usuario</label>
+                    <input type="text" class="form-control" placeholder="Nombre de usuario" value="{{pp.user.username}}"
+                      name="three" id="name">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="" style="color: #fff;">Email</label>
-                    <input type="email" class="form-control" placeholder="Name" value="{{pp.user.email}}" name="four"
-                      id="name">
+                    <label for="" style="color: #fff;">Correo electrónico</label>
+                    <input type="email" class="form-control" placeholder="Correo electrónico" value="{{pp.user.email}}"
+                      name="four" id="name">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="" style="color: #fff;">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" name="five" id="four">
+                    <label for="" style="color: #fff;">Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Contraseña" name="five" id="four">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="" style="color: #fff;">Confirm Password</label>
-                    <input type="password" class="form-control" placeholder="Confirm Password" name="six" id="name">
+                    <label for="" style="color: #fff;">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" placeholder="Confirmar Contraseña" name="six" id="name">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="" style="color: #fff;">Phone Number</label>
-                    <input type="text" class="form-control" placeholder="Name" value="{{pp.phone}}" name="seven"
-                      id="name">
+                    <label for="" style="color: #fff;">Número de teléfono</label>
+                    <input type="text" class="form-control" placeholder="Número de teléfono" value="{{pp.phone}}"
+                      name="seven" id="name">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="" style="color: #fff;">Profile Pic</label>
-                    <input type="file" class="form-control" placeholder="Name" name="eight" id="name">
+                    <label for="" style="color: #fff;">Foto de perfil</label>
+                    <input type="file" class="form-control" placeholder="Foto de perfil" name="eight" id="name">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="btn-submit btn-common-white">
-                    <input type="submit" value="Update" id="btn_order_submit" />
+                    <input type="submit" value="Actualizar" id="btn_order_submit" />
                   </div>
                   <a href="{% url 'repair:logout' %}"
-                    style="padding: 10px;border-radius: 10px; width: 100px;background-color: red;color: #fff;">logout</a>
+                    style="padding: 10px;border-radius: 10px; width: 100px;background-color: red;color: #fff;">Cerrar
+                    sesión</a>
                   {% if pp.is_manager == True %}
                   <a href="{% url 'repair:admin' %}"
-                    style="padding: 10px;border-radius: 10px; width: 100px;background-color: red;color: #fff;">Admin
-                    page</a>
+                    style="padding: 10px;border-radius: 10px; width: 100px;background-color: red;color: #fff;">Página de
+                    administración</a>
                   {% endif %}
                 </div>
               </div>
@@ -195,7 +196,7 @@
         </div>
         </form>
         <label for="check"
-          style="padding: 10px; border-radius: 20px;width:100px; position: fixed;bottom:30px;right:30px;background-color: red;text-align: center;color:#fff;">History</label>
+          style="padding: 10px; border-radius: 20px;width:100px; position: fixed;bottom:30px;right:30px;background-color: red;text-align: center;color:#fff;">Historial</label>
         <div class="btn-submit btn-common-white">
           <div class="container">
             <input type="checkbox" id="check" />
@@ -206,13 +207,13 @@
               </div><br><br>
               {% if history %}
               {% for h in history %}
-              <p style="color: #333;">- at {{h.date}} you ordered {{h.device}} {{h.model}} problem.</p><br><br>
+              <p style="color: #333;">- el {{h.date}} solicitaste {{h.device}} {{h.model}} problema.</p><br><br>
               {% endfor %}
               {% else %}
-              <p style="color: #333;">- no order history yet.</p><br><br>
+              <p style="color: #333;">- no hay historial de pedidos aún.</p><br><br>
               {% endif %}
               <div class="btns">
-                <label for="check"> Cancel</label>
+                <label for="check"> Cancelar</label>
               </div>
             </div>
           </div>
