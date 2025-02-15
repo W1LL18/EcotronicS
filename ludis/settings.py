@@ -16,19 +16,10 @@ SECRET_KEY = 'django-insecure-a*z0o!n@91828lb064yv)r)ju86xbjq!=vd)z3xa47eo8i6cap
 DEBUG = True
 
 CSRF_TRUSTED_ORIGINS = ['https://bilihcare-production.up.railway.app',
-<<<<<<< HEAD
-                        'https://serviciosecotronic.com', ]
-=======
-'https://serviciosecotronic.com',]
->>>>>>> 3bbe13e788a21d19b4d33d04dbe2237c0fb23cd0
+                        'https://serviciosecotronic.com/', ]
 
 
 ALLOWED_HOSTS = ['*']
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-]
-
 
 #CSRF_TRUSTED_ORIGINS = ['https://project-one-production.up.railway.app','https://bilihcare.cm']
 # Application definition
