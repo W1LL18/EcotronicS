@@ -15,10 +15,16 @@ SECRET_KEY = 'django-insecure-a*z0o!n@91828lb064yv)r)ju86xbjq!=vd)z3xa47eo8i6cap
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CSRF_TRUSTED_ORIGINS = ['https://bilihcare-production.up.railway.app',]
+CSRF_TRUSTED_ORIGINS = ['https://bilihcare-production.up.railway.app',
+                        'https://serviciosecotronic.com', ]
 
 
 ALLOWED_HOSTS = ['*']
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 #CSRF_TRUSTED_ORIGINS = ['https://project-one-production.up.railway.app','https://bilihcare.cm']
 # Application definition
