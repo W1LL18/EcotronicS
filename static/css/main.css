@@ -1,16 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 :root {
-  --main: red;
+  --primary: #0077b6;
+  /* Azul intenso */
+  --secondary: #0096c7;
+  /* Azul celeste */
+  --accent: #ffb703;
+  /* Amarillo dorado */
+  --background: #f8f9fa;
+  /* Blanco humo */
+  --text-dark: #343a40;
+  --text-light: #ffffff;
+  --hover: #48cae4;
+  /* Azul claro */
 }
 
 * {
-  font-family: cursive;
+  font-family: 'Inter', sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  text-transform: capitalize;
 }
 
 html {
@@ -18,82 +28,117 @@ html {
   font-size: 62.5%;
 }
 
-.heading {
-  color: #333;
-  font-size: 3.5rem;
-  padding: 1rem;
-  padding-top: 6rem;
-  text-align: center;
-  letter-spacing: .2rem;
+body {
+  background: var(--background);
+  color: var(--text-dark);
 }
 
-.heading span {
-  color: var(--main);
-}
-
+/* 🔹 NUEVO ESTILO DE BARRA DE NAVEGACIÓN */
 header {
-  width: 96%;
-  background: #fff;
+  width: 100%;
+  background: rgba(0, 119, 182, 0.8);
+  /* Transparencia sutil */
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: .5rem;
-  box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
-  padding: .3rem 2rem;
-  transition: .2s linear;
-  z-index: 1000;
-}
-
-.header-active {
   top: 0;
-  width: 100%;
-  border-radius: 0;
+  left: 0;
+  padding: 1.5rem 4rem;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid var(--accent);
+  border-radius: 0 0 15px 15px;
+  /* Bordes redondeados abajo */
 }
 
 header .logo {
-  background: #333;
-  border-radius: 20px;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-light);
+  text-transform: uppercase;
 }
 
-header .logo span {
-  color: var(--main);
+/* 🔹 NAVEGACIÓN ALINEADA A LA DERECHA */
+header .navbar {
+  margin-left: auto;
 }
 
 header .navbar ul {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
 }
 
 header .navbar ul li {
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 }
 
 header .navbar ul li a {
-  font-size: 2rem;
-  color: #333;
-  transition: .2s linear;
+  font-size: 1.8rem;
+  color: var(--text-light);
+  padding: 1rem 1.8rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
-
-header .navbar ul li .active,
 header .navbar ul li a:hover {
-  color: var(--main);
+  background: var(--hover);
+  color: var(--text-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(72, 202, 228, 0.5);
 }
 
+/* 🔹 ICONO DE MENÚ HAMBURGUESA */
 header .fa-bars {
   font-size: 3rem;
-  color: var(--main);
+  color: var(--text-light);
   cursor: pointer;
   display: none;
 }
+
+/* 🔹 ESTILOS RESPONSIVOS PARA MÓVILES */
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem 2rem;
+  }
+
+  header .fa-bars {
+    display: block;
+  }
+
+  header .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    height: 100vh;
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease;
+  }
+
+  header .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  header .navbar ul li {
+    margin: 2rem 0;
+  }
+
+  header .navbar.active {
+    left: 0;
+  }
+}
+
 
 .home {
   min-height: 100vh;

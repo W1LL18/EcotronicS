@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 handler404 = 'repair.views.custom_404'
-
+    
 app_name = 'repair'
 
 urlpatterns = [
