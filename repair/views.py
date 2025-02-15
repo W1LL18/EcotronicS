@@ -6,7 +6,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from .forms import *
+from django.contrib.auth.decorators import user_passes_test
 
+def es_admin(user):
+    return user.is_authenticated and user.is_staff  # Solo permite a usuarios con permisos de staff
+
+def custom_404(request, exception):
+    return render(request, 'errors/404.html', status=404)
 
 def index(request):
     User = request.user
@@ -302,6 +308,7 @@ def profile(request):
 
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def admin_page(request):
     User = request.user
     web = Webpack.objects.get(id=1)
@@ -332,6 +339,7 @@ def custom_logout(request):
 
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def about_edit(request):
     User = request.user
     web = Webpack.objects.get(id=1)
@@ -384,6 +392,7 @@ def about_edit(request):
 
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def sup_edit(request):
     User = request.user
     web = Webpack.objects.get(id=1)
@@ -426,6 +435,7 @@ def sup_edit(request):
     
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def user_edit(request):
     User = request.user
     web = Webpack.objects.get(id=1)
@@ -462,6 +472,7 @@ def user_edit(request):
   
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def book(request):
     a = Order.objects.all().count()
     b = Order.objects.all()
@@ -490,6 +501,7 @@ def book(request):
 
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def com(request):
     a = Apply.objects.all().count()
     b = Apply.objects.all()
@@ -518,6 +530,7 @@ def com(request):
 
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def admin_profile(request):
     User = request.user
     web = Webpack.objects.get(id=1)
@@ -562,6 +575,7 @@ def admin_profile(request):
 
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def setting(request):
     User = request.user
     web = Webpack.objects.get(id=1)
@@ -618,6 +632,7 @@ def setting(request):
 
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def cat_edit(request):
     User = request.user
     web = Webpack.objects.get(id=1)
@@ -661,6 +676,7 @@ def cat_edit(request):
 
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def blogpost(request):
     User = request.user
     web = Webpack.objects.get(id=1)
@@ -1187,6 +1203,7 @@ def priceadd(request):
 
 
 @login_required(login_url='login')
+@user_passes_test(es_admin, login_url='repair:index')
 def new(request):
     User = request.user
     web = Webpack.objects.get(id=1)
