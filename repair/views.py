@@ -253,16 +253,18 @@ def profile(request):
     micon = ""
     mtitle = ""
     history = Order.objects.filter(user=User.id)
-    pp = Profile.objects.get(user=User.id)
+    pp, created = Profile.objects.get_or_create(user=User)  # Usar get_or_create para evitar errores
+
     if request.method == 'POST':
         try:
             a = request.POST['one']
             b = request.POST['two']
             c = request.POST['three']
             d = request.POST['four']
-            e = request.POST['five']
-            f = request.POST['six']
+            e = request.POST.get('five', '')  # Usar get para evitar KeyError
+            f = request.POST.get('six', '')   # Usar get para evitar KeyError
             g = request.POST['seven']
+
             if e:
                 if e == f:
                     User.set_password(e)
@@ -270,40 +272,51 @@ def profile(request):
                     micon = "success"
                     mtitle = "success"
                     messages.add_message(request, messages.INFO, 'Password Updated successfully')
-                    return redirect('repair:login')
+                    return redirect('repair:login')  # Redirigir y evitar que el código continúe
                 else:
                     micon = "error"
                     mtitle = "error"
-                    messages.add_message(request, messages.INFO, 'Passwords donot match please try again')
-                
-            User.username=c
-            User.first_name=a
-            User.last_name=b
-            User.email=d
+                    messages.add_message(request, messages.INFO, 'Passwords do not match, please try again')
+
+            User.username = c
+            User.first_name = a
+            User.last_name = b
+            User.email = d
             User.save()
-            pp.phone=g
+
+            pp.phone = g
             pp.save()
+
             micon = "success"
             mtitle = "success"
-            messages.add_message(request, messages.INFO, 'Profile Updated successfully')      
-            if request.FILES['eight']:
+            messages.add_message(request, messages.INFO, 'Profile Updated successfully')
+
+            if 'eight' in request.FILES:  # Verificar si el archivo existe
                 h = request.FILES['eight']
                 pp.profile_pic = h
                 pp.save()
                 micon = "success"
                 mtitle = "success"
-                messages.add_message(request, messages.INFO, 'Profile picture Updated successfully')  
-            
-        except:pass
+                messages.add_message(request, messages.INFO, 'Profile picture Updated successfully')
+
+        except KeyError as e:
+            micon = "error"
+            mtitle = "error"
+            messages.add_message(request, messages.INFO, f'Missing field: {e}')
+        except Exception as e:
+            micon = "error"
+            mtitle = "error"
+            messages.add_message(request, messages.INFO, f'An error occurred: {e}')
+
     context = {
-        'web':web,
-        'User':User,
-        'micon':micon,
-        'mtitle':mtitle,
-        'pp':pp,
-        'history':history,
+        'web': web,
+        'User': User,
+        'micon': micon,
+        'mtitle': mtitle,
+        'pp': pp,
+        'history': history,
     }
-    return render(request,'profile.html',context)
+    return render(request, 'profile.html', context) 
 
 
 

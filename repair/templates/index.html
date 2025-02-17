@@ -20,16 +20,8 @@
     }
   </style>
   <style>
-    .alert_box {
-      position: absolute;
-      top: 50%;
-      margin-top: 60px;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
     .background {
-      position: absolute;
+      position: fixed;
       height: 100%;
       width: 100%;
       top: 0;
@@ -41,20 +33,25 @@
     }
 
     .alert_box {
-      padding: 30px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.97);
+      background: var(--background-color);
+      padding: 25px;
       display: flex;
-      background: #fff;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      max-width: 450px;
-      width: 100%;
-      border-radius: 5px;
-      z-index: 5;
+      max-width: 400px;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px var(--shadow-color);
+      z-index: 1050;
       opacity: 0;
       pointer-events: none;
-      transform: translate(-50%, -50%) scale(0.97);
       transition: all 0.3s ease;
+      border: 2px solid var(--primary-color);
     }
 
     #check:checked~.alert_box {
@@ -73,48 +70,69 @@
     }
 
     .alert_box .icon {
-      height: 100px;
-      width: 100px;
-      color: #f23b26;
-      border: 3px solid #f23b26;
+      height: 80px;
+      width: 80px;
+      color: var(--primary-color);
+      border: 3px solid var(--primary-color);
       border-radius: 50%;
-      line-height: 97px;
-      font-size: 50px;
+      line-height: 77px;
+      font-size: 40px;
+      margin-bottom: 10px;
     }
 
     .alert_box .header2 {
-      font-size: 35px;
-      font-weight: 500;
-      margin: 10px 0;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 10px;
     }
 
     .alert_box p {
-      font-size: 20px;
+      font-size: 16px;
+      color: var(--text-color);
+      margin-bottom: 10px;
     }
 
     .alert_box .btns {
-      margin-top: 20px;
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
     }
 
     .btns label {
       display: inline-flex;
-      height: 55px;
-      padding: 0 30px;
-      font-size: 20px;
-      font-weight: 400;
+      height: 45px;
+      padding: 0 25px;
+      font-size: 16px;
+      font-weight: 500;
       cursor: pointer;
-      line-height: 55px;
+      line-height: 45px;
       outline: none;
-      margin: 0 10px;
       border: none;
-      color: #fff;
-      border-radius: 5px;
+      color: white;
+      border-radius: 6px;
       transition: all 0.3s ease;
-      background: #2980b9;
+      background: var(--secondary-color);
+      box-shadow: 0px 3px 5px var(--shadow-color);
     }
 
-    .btns label a {
-      text-decoration: none;
+    .btns label:hover {
+      background: darken(var(--secondary-color), 10%);
+    }
+
+    .alert_box label[for="check"] {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      cursor: pointer;
+      color: var(--primary-color);
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .alert_box label[for="check"]:hover {
+      color: darken(var(--primary-color), 10%);
     }
   </style>
   <style>
@@ -132,7 +150,7 @@
       width: 100%;
       top: 0;
       left: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.5);
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s ease;
@@ -307,7 +325,7 @@
             <input type="email" name="email" placeholder="Correo" id=""><br><br>
             <input type="text" name="phone" placeholder="Número de celular" id=""><br><br>
             <select class="col-md-6" id="country" name="country" class="form-control">
-              <option value="">Please Select Your Current Country</option>
+              <option value="">Selecciona tu país</option>
               <option value="Afghanistan">Afghanistan</option>
               <option value="Åland Islands">Åland Islands</option>
               <option value="Albania">Albania</option>
@@ -566,7 +584,8 @@
           </div>
         </div>
 
-        <label for="check" class="mine" style="padding: 10px; border-radius: 20px" onclick="guess()">Enviar y
+        <label for="check" class="mine" style="padding: 10px; border-radius: 20px" onclick="guess()">Enviar
+          y
           solicitar </label>
         <input type="submit" id="no" name="no" style="display: none" />
         <input type="submit" id="yes" name="yes" style="display: none" />
@@ -655,10 +674,7 @@
 
     <p>
       Valoramos una carrera, hacer lo que amas es como jugar un juego.
-      Si te apasiona la reparación de equipos electrónicos, ven y postula a un trabajo con nosotros. O si quieres ser
-      franquiciado de nuestros productos, puedes postularte aquí.
-
-
+      Si te apasiona la reparación de equipos electrónicos, ven y postula a un trabajo con nosotros.
     </p>
 
     <form method="POST" enctype="multipart/form-data">
