@@ -97,6 +97,40 @@
   .btns label a {
     text-decoration: none;
   }
+
+  body {
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+  }
+
+  .profile-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+  }
+
+  .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .btn-primary {
+    background: #ff4b2b;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background: #ff5733;
+  }
 </style>
 {% endblock %}
 {% block title %} Configuración de Perfil{% endblock %}
